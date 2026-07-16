@@ -66,7 +66,7 @@ export function AppSidebar() {
             <div className="min-w-0">
               <div className="truncate text-sm font-bold tracking-tight">BIZbuilder AI</div>
               <div className="truncate text-[10px] text-muted-foreground">
-                AI for local business
+                Get your business digital today!
               </div>
             </div>
           )}
