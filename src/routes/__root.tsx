@@ -82,13 +82,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "BIZbuilder AI helps local businesses generate a professional online presence with AI — profiles, websites, marketing, links, QR codes, and analytics.",
       },
-      { property: "og:title", content: "BIZbuilder AI" },
+      { property: "og:title", content: "BIZbuilder AI — AI for Local Business" },
       {
         property: "og:description",
-        content: "Build your business online in minutes with AI.",
+        content: "BIZbuilder AI helps local businesses generate a professional online presence with AI — profiles, websites, marketing, links, QR codes, and analytics.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "BIZbuilder AI — AI for Local Business" },
+      { name: "twitter:description", content: "BIZbuilder AI helps local businesses generate a professional online presence with AI — profiles, websites, marketing, links, QR codes, and analytics." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/76872895-e086-4964-9ced-9a471131e2dc" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/76872895-e086-4964-9ced-9a471131e2dc" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
