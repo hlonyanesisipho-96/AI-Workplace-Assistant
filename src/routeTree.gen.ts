@@ -16,6 +16,7 @@ import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as PreviewRouteImport } from './routes/preview'
 import { Route as MarketingRouteImport } from './routes/marketing'
 import { Route as LinksRouteImport } from './routes/links'
+import { Route as LandingRouteImport } from './routes/landing'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
@@ -57,6 +58,11 @@ const LinksRoute = LinksRouteImport.update({
   path: '/links',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LandingRoute = LandingRouteImport.update({
+  id: '/landing',
+  path: '/landing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HelpRoute = HelpRouteImport.update({
   id: '/help',
   path: '/help',
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/analytics': typeof AnalyticsRoute
   '/assistant': typeof AssistantRoute
   '/help': typeof HelpRoute
+  '/landing': typeof LandingRoute
   '/links': typeof LinksRoute
   '/marketing': typeof MarketingRoute
   '/preview': typeof PreviewRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/analytics': typeof AnalyticsRoute
   '/assistant': typeof AssistantRoute
   '/help': typeof HelpRoute
+  '/landing': typeof LandingRoute
   '/links': typeof LinksRoute
   '/marketing': typeof MarketingRoute
   '/preview': typeof PreviewRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/analytics': typeof AnalyticsRoute
   '/assistant': typeof AssistantRoute
   '/help': typeof HelpRoute
+  '/landing': typeof LandingRoute
   '/links': typeof LinksRoute
   '/marketing': typeof MarketingRoute
   '/preview': typeof PreviewRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/assistant'
     | '/help'
+    | '/landing'
     | '/links'
     | '/marketing'
     | '/preview'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/assistant'
     | '/help'
+    | '/landing'
     | '/links'
     | '/marketing'
     | '/preview'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/assistant'
     | '/help'
+    | '/landing'
     | '/links'
     | '/marketing'
     | '/preview'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   AnalyticsRoute: typeof AnalyticsRoute
   AssistantRoute: typeof AssistantRoute
   HelpRoute: typeof HelpRoute
+  LandingRoute: typeof LandingRoute
   LinksRoute: typeof LinksRoute
   MarketingRoute: typeof MarketingRoute
   PreviewRoute: typeof PreviewRoute
@@ -237,6 +250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LinksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/landing': {
+      id: '/landing'
+      path: '/landing'
+      fullPath: '/landing'
+      preLoaderRoute: typeof LandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/help': {
       id: '/help'
       path: '/help'
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   AnalyticsRoute: AnalyticsRoute,
   AssistantRoute: AssistantRoute,
   HelpRoute: HelpRoute,
+  LandingRoute: LandingRoute,
   LinksRoute: LinksRoute,
   MarketingRoute: MarketingRoute,
   PreviewRoute: PreviewRoute,
