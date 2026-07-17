@@ -10,6 +10,7 @@ import {
   Bot,
   TrendingUp,
   Eye,
+  Rocket,
   Settings,
   HelpCircle,
   Sparkles,
@@ -45,6 +46,7 @@ const aiItems = [
 ];
 
 const bottomItems = [
+  { title: "Landing Page", url: "/landing", icon: Rocket },
   { title: "Settings", url: "/settings", icon: Settings },
   { title: "Help & Support", url: "/help", icon: HelpCircle },
 ];
