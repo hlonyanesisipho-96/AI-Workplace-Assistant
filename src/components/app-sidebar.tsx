@@ -10,6 +10,7 @@ import {
   Bot,
   TrendingUp,
   Eye,
+  Rocket,
   Settings,
   HelpCircle,
   Sparkles,
