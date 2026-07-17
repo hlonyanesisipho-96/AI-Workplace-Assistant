@@ -122,19 +122,25 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isLanding = pathname === "/landing";
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <TooltipProvider delayDuration={200}>
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-              <DashboardHeader />
-              <main className="flex-1 px-4 py-6 md:px-6 md:py-8">
-                <Outlet />
-              </main>
-            </SidebarInset>
-          </SidebarProvider>
+          {isLanding ? (
+            <Outlet />
+          ) : (
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarInset>
+                <DashboardHeader />
+                <main className="flex-1 px-4 py-6 md:px-6 md:py-8">
+                  <Outlet />
+                </main>
+              </SidebarInset>
+            </SidebarProvider>
+          )}
           <Toaster richColors position="top-right" />
         </TooltipProvider>
       </ThemeProvider>
